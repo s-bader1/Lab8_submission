@@ -8,16 +8,19 @@ import java.util.ArrayList;
 
 public class CustomListTest {
     private CustomList list;
+    private City edmonton;
+
 
     @BeforeEach
     public void createList() {
-        list = new CustomList(null, new ArrayList<City>());
-        @Test
-        public void hasCityTest() {
-            list.addCity(new City("Halifax", "NS"));
-            assertEquals(list.hasCity(), true);
-        }
+        list = new CustomList();
+        edmonton = new City("Edmonton", "AB");
+    }
 
+    @Test
+    public void hasCityTest() {
+        list.addCity(edmonton);
+        assertEquals(list.hasCity(edmonton), true);
     }
 
 }
